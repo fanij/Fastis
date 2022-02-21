@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99D66FB2506B44156C714D4F /* Pods_FastisExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB137E4877EBDC6E87A77A4B /* Pods_FastisExample.framework */; };
+		41FC25BC894AA94D7847077D /* Pods_FastisExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFADD0BCFC771CD8D38750F /* Pods_FastisExample.framework */; };
 		F3FCEE47244780FE000F966E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FCEE46244780FE000F966E /* AppDelegate.swift */; };
 		F3FCEE4B244780FE000F966E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FCEE4A244780FE000F966E /* ViewController.swift */; };
 		F3FCEE5024478100000F966E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FCEE4F24478100000F966E /* Assets.xcassets */; };
@@ -15,8 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6FFADD0BCFC771CD8D38750F /* Pods_FastisExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastisExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49955908C269C4F65B964A4 /* Pods-FastisExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastisExample.release.xcconfig"; path = "Target Support Files/Pods-FastisExample/Pods-FastisExample.release.xcconfig"; sourceTree = "<group>"; };
-		CB137E4877EBDC6E87A77A4B /* Pods_FastisExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastisExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25E93A7E35340B90A233761 /* Pods-FastisExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastisExample.debug.xcconfig"; path = "Target Support Files/Pods-FastisExample/Pods-FastisExample.debug.xcconfig"; sourceTree = "<group>"; };
 		F3FCEE43244780FE000F966E /* FastisExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastisExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FCEE46244780FE000F966E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99D66FB2506B44156C714D4F /* Pods_FastisExample.framework in Frameworks */,
+				41FC25BC894AA94D7847077D /* Pods_FastisExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +41,7 @@
 		6EEA20A76D9EBA8BC37D650E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CB137E4877EBDC6E87A77A4B /* Pods_FastisExample.framework */,
+				6FFADD0BCFC771CD8D38750F /* Pods_FastisExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -324,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -340,9 +340,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 48KFD5698Q;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,9 +360,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 48KFD5698Q;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
