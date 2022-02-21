@@ -234,10 +234,12 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
         self.view.backgroundColor = self.appearance.backgroundColor
         self.navigationController?.navigationBar.titleTextAttributes = self.appearance.titleTextAttributes
 
-        if #available(iOS 13.0, *) {
-            let appearnce = UINavigationBarAppearance()
-            appearnce.configureWithTransparentBackground()
-            self.navigationItem.standardAppearance = appearnce
+        if config.controller.transparentNavigationBarAppearance {
+            if #available(iOS 13.0, *) {
+                let appearnce = UINavigationBarAppearance()
+                appearnce.configureWithTransparentBackground()
+                self.navigationItem.standardAppearance = appearnce
+            }
         }
         self.navigationItem.largeTitleDisplayMode = .never
         self.navigationItem.leftBarButtonItem = self.cancelBarButtonItem
@@ -544,5 +546,6 @@ extension FastisConfig {
         public var barButtonItemsColor: UIColor = .systemBlue
         public var customCancelButton: UIBarButtonItem?
         public var customDoneButton: UIBarButtonItem?
+        public var transparentNavigationBarAppearance: Bool = true
     }
 }
