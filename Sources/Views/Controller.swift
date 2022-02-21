@@ -97,7 +97,7 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
     private let dayCellReuseIdentifier = "DayCellReuseIdentifier"
     private let monthHeaderReuseIdentifier = "MonthHeaderReuseIdentifier"
     private var viewConfigs: [IndexPath: DayCell.ViewConfig] = [:]
-    private var currentCalendar: Calendar = .autoupdatingCurrent
+    public var currentCalendar: Calendar = .autoupdatingCurrent
     private var privateMinimumDate: Date?
     private var privateMaximumDate: Date?
     private var privateSelectMonthOnHeaderTap: Bool = false
@@ -304,7 +304,8 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
             let newConfig = DayCell.makeViewConfig(for: cellState,
                                                    minimumDate: self.privateMinimumDate,
                                                    maximumDate: self.privateMaximumDate,
-                                                   rangeValue: self.value as? FastisRange)
+                                                   rangeValue: self.value as? FastisRange,
+                                                   calendar: currentCalendar)
             self.viewConfigs[indexPath] = newConfig
             cell.applyConfig(self.config.dayCell)
             cell.configure(for: newConfig)

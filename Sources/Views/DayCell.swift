@@ -138,7 +138,7 @@ class DayCell: JTACDayCell {
         }
     }
 
-    public static func makeViewConfig(for state: CellState, minimumDate: Date?, maximumDate: Date?, rangeValue: FastisRange?) -> ViewConfig {
+    public static func makeViewConfig(for state: CellState, minimumDate: Date?, maximumDate: Date?, rangeValue: FastisRange?, calendar:Calendar) -> ViewConfig {
 
         var config = ViewConfig()
 
@@ -148,7 +148,6 @@ class DayCell: JTACDayCell {
 
             if let value = rangeValue {
 
-                let calendar = Calendar.current
                 var showRangeView: Bool = false
 
                 if state.dateBelongsTo == .followingMonthWithinBoundary {
