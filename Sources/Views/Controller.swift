@@ -411,13 +411,13 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
         var endDate = dateFormatter.date(from: "2030 12 01")!
 
         if let maximumDate = self.privateMaximumDate,
-            let endOfNextMonth = self.currentCalendar.date(byAdding: .month, value: 2, to: maximumDate)?
+           let endOfNextMonth = self.currentCalendar.date(byAdding: .month, value: config.controller.extraVisibleMounthsOnMixMax, to: maximumDate)?
                 .endOfMonth(in: self.currentCalendar) {
             endDate = endOfNextMonth
         }
 
         if let minimumDate = self.privateMinimumDate,
-            let startOfPreviousMonth = self.currentCalendar.date(byAdding: .month, value: -2, to: minimumDate)?
+            let startOfPreviousMonth = self.currentCalendar.date(byAdding: .month, value: -config.controller.extraVisibleMounthsOnMixMax, to: minimumDate)?
                 .startOfMonth(in: self.currentCalendar) {
             startDate = startOfPreviousMonth
         }
@@ -547,5 +547,6 @@ extension FastisConfig {
         public var customCancelButton: UIBarButtonItem?
         public var customDoneButton: UIBarButtonItem?
         public var transparentNavigationBarAppearance: Bool = true
+        public var extraVisibleMounthsOnMixMax: Int = 2
     }
 }
