@@ -158,7 +158,7 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
             return self.privateMinimumDate
         }
         set {
-            self.privateMinimumDate = newValue?.startOfDay()
+            self.privateMinimumDate = newValue?.startOfDay(in: currentCalendar)
         }
     }
 
@@ -178,7 +178,7 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
             return self.privateMaximumDate
         }
         set {
-            self.privateMaximumDate = newValue?.endOfDay()
+            self.privateMaximumDate = newValue?.endOfDay(in: currentCalendar)
         }
     }
 
