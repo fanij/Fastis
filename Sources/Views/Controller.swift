@@ -51,7 +51,9 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
         monthView.allowsMultipleSelection = Value.mode == .range
         monthView.allowsRangedSelection = true
         monthView.rangeSelectionMode = .continuous
-        monthView.contentInsetAdjustmentBehavior = .always
+        if #available(iOS 11.0, *) {
+            monthView.contentInsetAdjustmentBehavior = .always
+        }
         return monthView
     }()
 
@@ -241,7 +243,9 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
                 self.navigationItem.standardAppearance = appearnce
             }
         }
-        self.navigationItem.largeTitleDisplayMode = .never
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
+        }
         self.navigationItem.leftBarButtonItem = self.cancelBarButtonItem
         self.navigationItem.rightBarButtonItem = self.doneBarButtonItem
 
@@ -260,7 +264,11 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
 
     private func configureConstraints() {
         self.currentValueView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(self.view.safeAreaLayoutGuide)
+            if #available(iOS 11.0, *) {
+                maker.top.equalTo(self.view.safeAreaLayoutGuide)
+            }else{
+                maker.top.equalTo(self.topLayoutGuide.snp.top)
+            }
             maker.left.right.equalToSuperview().inset(12)
         }
         self.weekView.snp.makeConstraints { (maker) in

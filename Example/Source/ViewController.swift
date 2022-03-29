@@ -73,13 +73,20 @@ class ViewController: UIViewController {
     private func configureUI() {
         self.view.backgroundColor = .white
         self.navigationItem.title = "Fastis demo"
-        self.navigationItem.largeTitleDisplayMode = .always
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .always
+        }
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .always
+        }
         self.currentValue = nil
     }
 
     private func configureSubviews() {
         self.containerView.addArrangedSubview(self.currentDateLabel)
-        self.containerView.setCustomSpacing(32, after: self.currentDateLabel)
+        if #available(iOS 11.0, *) {
+            self.containerView.setCustomSpacing(32, after: self.currentDateLabel)
+        }
         self.containerView.addArrangedSubview(self.chooseRangeButton)
         self.containerView.addArrangedSubview(self.chooseSingleButton)
         self.view.addSubview(self.containerView)
@@ -87,9 +94,15 @@ class ViewController: UIViewController {
 
     private func configureConstraints() {
         self.containerView.snp.makeConstraints { (maker) in
-            maker.center.equalTo(self.view.safeAreaLayoutGuide)
-            maker.left.top.greaterThanOrEqualTo(self.view.safeAreaLayoutGuide)
-            maker.bottom.right.lessThanOrEqualTo(self.view.safeAreaLayoutGuide)
+            if #available(iOS 11.0, *) {
+                maker.center.equalTo(self.view.safeAreaLayoutGuide)
+                maker.left.top.greaterThanOrEqualTo(self.view.safeAreaLayoutGuide)
+                maker.bottom.right.lessThanOrEqualTo(self.view.safeAreaLayoutGuide)
+            } else {
+                maker.center.equalTo(self.view.layoutMarginsGuide)
+                maker.left.top.greaterThanOrEqualTo(self.view.layoutMarginsGuide)
+                maker.bottom.right.lessThanOrEqualTo(self.view.layoutMarginsGuide)
+            }
         }
     }
 

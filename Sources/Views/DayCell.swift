@@ -31,7 +31,9 @@ class DayCell: JTACDayCell {
         let view = UIView()
         view.layer.masksToBounds = true
         view.isHidden = true
-        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        if #available(iOS 11.0, *) {
+            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        }
         return view
     }()
 
@@ -39,7 +41,9 @@ class DayCell: JTACDayCell {
         let view = UIView()
         view.layer.masksToBounds = true
         view.isHidden = true
-        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        if #available(iOS 11.0, *) {
+            view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        }
         return view
     }()
 

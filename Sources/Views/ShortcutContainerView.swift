@@ -90,7 +90,11 @@ class ShortcutContainerView<Value: FastisValue>: UIView {
         }
         self.scrollView.snp.makeConstraints { (maker) in
             maker.height.equalTo(self.stackView).offset(self.config.insets.top + self.config.insets.bottom)
-            maker.edges.equalTo(self.safeAreaLayoutGuide)
+            if #available(iOS 11.0, *) {
+                maker.edges.equalTo(self.safeAreaLayoutGuide)
+            }else{
+                maker.edges.equalTo(self.layoutMarginsGuide)
+            }
         }
     }
 
