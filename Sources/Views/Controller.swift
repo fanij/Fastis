@@ -281,8 +281,22 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
             }
         }
         self.calendarView.snp.makeConstraints { (maker) in
+            
+            //fix - vertical lines in JTAppleCalendar https://github.com/patchthecode/JTAppleCalendar/issues/480
+            //set the calendar's width to a size that is divisible by seven without a recurring decimal place.
+            var fixSpacer:CGFloat?
+            if let width = calendarView.superview?.frame.width {
+                let cellWidthToBe = (width - (16 * 2)) / 7
+                let remainder = cellWidthToBe.truncatingRemainder(dividingBy: 1)
+                if remainder > 0 {
+                    let cellWidth = cellWidthToBe - remainder
+                    let newWidth = cellWidth * 7
+                    fixSpacer = (width - newWidth) / 2
+                }
+            }
+            
             maker.top.equalTo(self.weekView.snp.bottom)
-            maker.left.right.equalToSuperview().inset(16)
+            maker.left.right.equalToSuperview().inset(fixSpacer ?? 16)
             if !self.shortcuts.isEmpty {
                 maker.bottom.equalTo(self.shortcutContainerView.snp.top)
             } else {
