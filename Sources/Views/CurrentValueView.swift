@@ -41,6 +41,7 @@ class CurrentValueView<Value: FastisValue>: UIView {
 
     private let config: FastisConfig.CurrentValueView
     public var onClear: (() -> Void)?
+    var timezone:TimeZone?
 
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -98,6 +99,10 @@ class CurrentValueView<Value: FastisValue>: UIView {
 
     private func updateStateForCurrentValue() {
 
+        if let timezone = timezone {
+            dateFormatter.timeZone = timezone
+        }
+        
         if let value = self.currentValue as? Date {
 
             self.label.text = self.dateFormatter.string(from: value)

@@ -63,6 +63,7 @@ public class FastisController<Value: FastisValue>: UIViewController, JTACMonthVi
 
     private lazy var currentValueView: CurrentValueView<Value> = {
         let view = CurrentValueView<Value>(config: self.config.currentValueView)
+        view.timezone = currentCalendar.timeZone
         view.currentValue = self.value
         view.onClear = {
             self.value = nil
